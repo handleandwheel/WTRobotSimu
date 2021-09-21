@@ -1,0 +1,2432 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  basicTimeStep 16
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.006913226267288601 0.7112664104596784 0.7028885407049836 3.121864510297463
+  position -0.36520840101571694 9.480839319705979 -0.14889159744226044
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 4 4
+  tileSize 1 1
+}
+Group {
+  children [
+    Solid {
+      translation 0.005 0.15 2.005
+      children [
+        DEF WALL_SHAPE Shape {
+          appearance DEF WALL_COLOR PBRAppearance {
+            baseColor 0.2 0.2 0.2
+            roughness 0.5
+            metalness 0
+          }
+          geometry Box {
+            size 4.01 0.3 0.01
+          }
+        }
+      ]
+      name "wall_1"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation 2.005 0.15 -0.005
+      rotation 0 1 0 1.5707
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_2"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation -2.005 0.15 0.005
+      rotation 0 1 0 1.5707
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_3"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation -0.005 0.15 -2.005
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_4"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation 1 0.15 -0.5
+      children [
+        DEF WALL5_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 3
+          }
+        }
+      ]
+      name "wall_5"
+      boundingObject USE WALL5_SHAPE
+    }
+    Solid {
+      translation -0.25 0.15 -0.5
+      children [
+        DEF WALL6_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 2.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_6"
+      boundingObject USE WALL6_SHAPE
+    }
+    Solid {
+      translation 0 0.15 1
+      children [
+        DEF WALL7_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 2
+          }
+        }
+      ]
+      name "wall_7"
+      boundingObject USE WALL7_SHAPE
+    }
+    Solid {
+      translation -1 0.15 -0.75
+      children [
+        DEF WALL8_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 1.5
+          }
+        }
+      ]
+      name "wall_8"
+      boundingObject USE WALL8_SHAPE
+    }
+    Solid {
+      translation -0.5 0.15 0.5
+      children [
+        DEF WALL9_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 1
+          }
+        }
+      ]
+      name "wall_9"
+      boundingObject USE WALL9_SHAPE
+    }
+    Solid {
+      translation 1 0.15 1
+      children [
+        DEF WALL10_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 1 0.3 0.01
+          }
+        }
+      ]
+      name "wall_10"
+      boundingObject USE WALL10_SHAPE
+    }
+    Solid {
+      translation 1.75 0.15 0
+      children [
+        DEF WALL11_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_11"
+      boundingObject USE WALL11_SHAPE
+    }
+    Solid {
+      translation -1.75 0.15 0.5
+      children [
+        DEF WALL12_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_12"
+      boundingObject USE WALL12_SHAPE
+    }
+    Solid {
+      translation -0.75 0.15 0
+      children [
+        DEF WALL13_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_13"
+      boundingObject USE WALL13_SHAPE
+    }
+    Solid {
+      translation -0.75 0.15 1
+      children [
+        DEF WALL14_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_14"
+      boundingObject USE WALL14_SHAPE
+    }
+    Solid {
+      translation -1 0.15 1.25
+      children [
+        DEF WALL15_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 0.5
+          }
+        }
+      ]
+      name "wall_15"
+      boundingObject USE WALL15_SHAPE
+    }
+  ]
+}
+Robot {
+  translation 1.75 0.055 -1.75
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF ROBOT_BOX_SHAPE Box {
+        size 0.2 0.08 0.2
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 -1
+        anchor 0.12 0 0.12
+      }
+      device [
+        RotationalMotor {
+          name "frontLeftMotor"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.12 0 0.12
+        rotation -0.7071067811865476 0 0.7071067811865476 1.5707999999999998
+        children [
+          DEF WHEEL_SHAPE Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.04
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.05 0 0
+            }
+            endPoint Solid {
+              translation 0.05 0 0
+              rotation 1 -1.9626119688198792e-17 4.121485134521747e-16 1.5707999999999998
+              children [
+                DEF ROLLER_SHAPE Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.006
+                  }
+                }
+              ]
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 0.901
+              anchor 0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 0.0217
+              rotation 0.9009683720604387 -4.9065299220496965e-18 0.4338847687425349 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(1)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor 0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 0.0391
+              rotation 0.6235113823041768 7.850447875279514e-17 0.7818142721498085 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(2)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor 0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 0.0487
+              rotation 0.22250709141400649 0 0.9749310715483833 1.5707999999999998
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(3)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 -0.2225
+              anchor -0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 0.0487
+              rotation -0.22250709141400687 3.925223937639757e-17 0.9749310715483833 1.5707999999999998
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(4)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 -0.6235
+              anchor -0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 0.0391
+              rotation -0.6235113823041769 7.850447875279518e-17 0.7818142721498084 1.5707999999999998
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(5)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 -0.901
+              anchor -0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 0.0217
+              rotation -0.9009683720604384 1.1775671812919274e-16 0.43388476874253534 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(6)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 -1
+              anchor -0.05 0 0
+            }
+            endPoint Solid {
+              translation -0.05 0 0
+              rotation -1 -9.813059844099402e-17 5.887835906459643e-17 1.5707999999999984
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(7)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.9749 0 0.2225
+              anchor 0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 -0.0487
+              rotation 0.22250709141400696 1.0793372790235373e-16 -0.9749310715483832 1.5709840180319863
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(8)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor -0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 -0.0391
+              rotation -0.6235111486269513 0 -0.7818144585116725 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(9)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor -0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 -0.0487
+              rotation -0.22250709141400687 -1.5454147404200655e-16 -0.9749310715483832 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(10)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.7818 0 0.6235
+              anchor 0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 -0.0391
+              rotation 0.623511382304177 9.812157082032159e-18 -0.7818142721498084 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(11)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 0.901
+              anchor 0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 -0.0217
+              rotation 0.9009683720604386 -7.849725665625725e-17 -0.4338847687425352 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(12)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 -0.901
+              anchor -0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 -0.0217
+              rotation -0.9009683720604386 -1.0057461009082959e-16 -0.433884768742535 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(13)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Transform {
+            translation 0 0.01 0
+            rotation 0 1 0 0.2244
+            children [
+              Solid {
+                children [
+                  DEF WHEEL_SHAPE Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.04
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 1
+                      anchor 0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation 0.05 0 0
+                      rotation 1 5.887835906459642e-17 1.4719589766149105e-16 1.570799999999999
+                      children [
+                        DEF ROLLER_SHAPE Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Cylinder {
+                            height 0.01
+                            radius 0.006
+                          }
+                        }
+                      ]
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 0.901
+                      anchor 0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 0.0217
+                      rotation 0.9009683720604387 9.322406851894436e-17 0.4338847687425351 1.570799999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(1)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor 0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 0.0391
+                      rotation 0.6235113823041768 -4.415876929844729e-17 0.7818142721498086 1.5708000000000004
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(2)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor 0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 0.0487
+                      rotation 0.22250709141400707 -9.813059844099395e-17 0.9749310715483833 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(3)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 -0.2225
+                      anchor -0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 0.0487
+                      rotation -0.2225070914140068 -1.6191548742763998e-16 0.9749310715483833 1.5708000000000004
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(4)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 -0.6235
+                      anchor -0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 0.0391
+                      rotation -0.6235113823041771 -1.1775671812919276e-16 0.7818142721498083 1.5707999999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(5)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 -0.901
+                      anchor -0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 0.0217
+                      rotation -0.9009683720604383 2.943917953229819e-17 0.4338847687425357 1.5708
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(6)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 -1
+                      anchor -0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation -0.05 0 0
+                      rotation -1 1.9626119688198792e-17 1.9626119688198792e-16 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(7)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.9749 0 0.2225
+                      anchor 0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 -0.0487
+                      rotation 0.22250709141400685 -9.812157082032157e-18 -0.9749310715483832 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(8)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor -0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 -0.0391
+                      rotation -0.6235111486269518 -1.5208843477149846e-16 -0.7818144585116723 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(9)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor -0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 -0.0487
+                      rotation -0.2225070914140068 -3.0662990881350497e-19 -0.9749310715483832 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(10)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.7818 0 0.6235
+                      anchor 0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 -0.0391
+                      rotation 0.6235113823041771 1.0793372790235381e-16 -0.781814272149808 1.5709840180319845
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(11)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 0.901
+                      anchor 0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 -0.0217
+                      rotation 0.9009683720604384 9.566853154981359e-17 -0.43388476874253523 1.5709840180319845
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(12)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 -0.901
+                      anchor -0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 -0.0217
+                      rotation -0.9009683720604386 9.076245300879748e-17 -0.4338847687425352 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(13)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
+                name "omnidial_wheel"
+                boundingObject USE WHEEL_SHAPE
+                physics Physics {
+                }
+              }
+            ]
+          }
+        ]
+        name "omnidial_wheel"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 1 0 1
+        anchor -0.12 0 -0.12
+      }
+      device [
+        RotationalMotor {
+          name "backRightMotor"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.12 0 -0.12
+        rotation 0.7071067811865476 0 -0.7071067811865476 1.5707999999999998
+        children [
+          DEF WHEEL_SHAPE Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.04
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.05 0 0
+            }
+            endPoint Solid {
+              translation 0.05 0 0
+              rotation 1 1.5700895750559034e-16 1.5700895750559034e-16 1.5708
+              children [
+                DEF ROLLER_SHAPE Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.006
+                  }
+                }
+              ]
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 0.901
+              anchor 0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 0.0217
+              rotation 0.9009683720604383 1.18370034369449e-16 0.4338847687425359 1.5707999999999995
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(1)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor 0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 0.0391
+              rotation 0.6235113823041768 -4.906529922049697e-17 0.7818142721498085 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(2)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor 0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 0.0487
+              rotation 0.22250709141400668 7.850447875279514e-17 0.9749310715483833 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(3)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 -0.2225
+              anchor -0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 0.0487
+              rotation -0.22250709141400707 7.850447875279516e-17 0.9749310715483833 1.5708000000000004
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(4)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 -0.6235
+              anchor -0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 0.0391
+              rotation -0.6235113823041766 -1.9626119688198792e-17 0.7818142721498087 1.570799999999999
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(5)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 -0.901
+              anchor -0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 0.0217
+              rotation -0.9009683720604384 -5.887835906459639e-17 0.43388476874253556 1.570799999999999
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(6)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 -1
+              anchor -0.05 0 0
+            }
+            endPoint Solid {
+              translation -0.05 0 0
+              rotation -1 7.850447875279517e-17 1.5700895750559034e-16 1.5707999999999998
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(7)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.9749 0 0.2225
+              anchor 0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 -0.0487
+              rotation 0.22250709141400657 1.9624314164064317e-16 -0.9749310715483834 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(8)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor -0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 -0.0391
+              rotation -0.6235111486269516 -9.812157082032157e-17 -0.7818144585116723 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(9)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor -0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 -0.0487
+              rotation -0.22250709141400676 -1.2265196352540195e-18 -0.9749310715483832 1.5709840180319863
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(10)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.7818 0 0.6235
+              anchor 0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 -0.0391
+              rotation 0.6235113823041767 3.139890266250291e-16 -0.7818142721498086 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(11)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 0.901
+              anchor 0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 -0.0217
+              rotation 0.9009683720604384 1.962431416406431e-16 -0.4338847687425353 1.5709840180319867
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(12)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 -0.901
+              anchor -0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 -0.0217
+              rotation -0.9009683720604384 -1.3491715987794213e-17 -0.4338847687425353 1.5709840180319863
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(13)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Transform {
+            translation 0 0.01 0
+            rotation 0 1 0 0.2244
+            children [
+              Solid {
+                children [
+                  DEF WHEEL_SHAPE Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.04
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 1
+                      anchor 0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation 0.05 0 0
+                      rotation 1 7.850447875279517e-17 -7.850447875279517e-17 1.5708
+                      children [
+                        DEF ROLLER_SHAPE Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Cylinder {
+                            height 0.01
+                            radius 0.006
+                          }
+                        }
+                      ]
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 0.901
+                      anchor 0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 0.0217
+                      rotation 0.9009683720604384 7.850447875279517e-17 0.43388476874253556 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(1)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor 0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 0.0391
+                      rotation 0.6235113823041769 7.850447875279516e-17 0.7818142721498083 1.5707999999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(2)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor 0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 0.0487
+                      rotation 0.22250709141400649 -3.925223937639757e-17 0.9749310715483833 1.5708
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(3)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 -0.2225
+                      anchor -0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 0.0487
+                      rotation -0.22250709141400699 0 0.9749310715483833 1.5708000000000006
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(4)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 -0.6235
+                      anchor -0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 0.0391
+                      rotation -0.623511382304177 -5.151856418152183e-17 0.7818142721498081 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(5)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 -0.901
+                      anchor -0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 0.0217
+                      rotation -0.9009683720604384 7.85044787527952e-17 0.43388476874253556 1.570799999999999
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(6)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 -1
+                      anchor -0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation -0.05 0 0
+                      rotation -1 7.85044787527952e-17 -1.570089575055904e-16 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(7)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.9749 0 0.2225
+                      anchor 0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 -0.0487
+                      rotation 0.22250709141400685 -7.849725665625727e-17 -0.9749310715483832 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(8)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor -0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 -0.0391
+                      rotation -0.6235111486269521 -5.887294249219297e-17 -0.781814458511672 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(9)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor -0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 -0.0487
+                      rotation -0.22250709141400685 -3.9248628328128636e-17 -0.9749310715483832 1.570984018031986
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(10)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.7818 0 0.6235
+                      anchor 0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 -0.0391
+                      rotation 0.6235113823041768 0 -0.7818142721498084 1.5709840180319852
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(11)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 0.901
+                      anchor 0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 -0.0217
+                      rotation 0.9009683720604387 -3.9248628328128636e-17 -0.433884768742535 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(12)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 -0.901
+                      anchor -0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 -0.0217
+                      rotation -0.9009683720604384 0 -0.4338847687425353 1.5709840180319867
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(13)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
+                name "omnidial_wheel"
+                boundingObject USE WHEEL_SHAPE
+                physics Physics {
+                }
+              }
+            ]
+          }
+        ]
+        name "omnidial_wheel(1)"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 1
+        anchor 0.12 0 -0.12
+      }
+      device [
+        RotationalMotor {
+          name "backLeftMotor"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.12 0 -0.12
+        rotation 0.7071067811865476 0 0.7071067811865476 1.5707999999999998
+        children [
+          DEF WHEEL_SHAPE Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.04
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.05 0 0
+            }
+            endPoint Solid {
+              translation 0.05 0 0
+              rotation 1 -7.850447875279517e-17 -2.355134362583855e-16 1.5707999999999998
+              children [
+                DEF ROLLER_SHAPE Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.006
+                  }
+                }
+              ]
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 0.901
+              anchor 0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 0.0217
+              rotation 0.9009683720604383 0 0.43388476874253573 1.570799999999999
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(1)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor 0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 0.0391
+              rotation 0.6235113823041771 -1.177567181291927e-16 0.7818142721498083 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(2)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor 0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 0.0487
+              rotation 0.22250709141400604 1.5700895750559036e-16 0.9749310715483837 1.5707999999999989
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(3)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 -0.2225
+              anchor -0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 0.0487
+              rotation -0.2225070914140065 7.850447875279514e-17 0.9749310715483834 1.5708000000000004
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(4)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 -0.6235
+              anchor -0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 0.0391
+              rotation -0.6235113823041771 -1.5700895750559031e-16 0.7818142721498083 1.5707999999999995
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(5)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 -0.901
+              anchor -0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 0.0217
+              rotation -0.9009683720604381 0 0.4338847687425362 1.5707999999999989
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(6)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 -1
+              anchor -0.05 0 0
+            }
+            endPoint Solid {
+              translation -0.05 0 0
+              rotation -1 9.813059844099401e-17 1.1775671812919283e-16 1.570799999999999
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(7)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.9749 0 0.2225
+              anchor 0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 -0.0487
+              rotation 0.22250709141400704 0 -0.9749310715483832 1.5709840180319863
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(8)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor -0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 -0.0391
+              rotation -0.6235111486269513 -3.973923618223031e-16 -0.7818144585116725 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(9)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor -0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 -0.0487
+              rotation -0.22250709141400685 6.132598176270097e-17 -0.9749310715483832 1.5709840180319867
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(10)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.7818 0 0.6235
+              anchor 0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 -0.0391
+              rotation 0.623511382304177 0 -0.7818142721498081 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(11)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 0.901
+              anchor 0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 -0.0217
+              rotation 0.9009683720604386 7.849725665625727e-17 -0.43388476874253534 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(12)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 -0.901
+              anchor -0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 -0.0217
+              rotation -0.9009683720604386 -5.887294249219295e-17 -0.43388476874253534 1.5709840180319863
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(13)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Transform {
+            translation 0 0.01 0
+            rotation 0 1 0 0.2244
+            children [
+              Solid {
+                children [
+                  DEF WHEEL_SHAPE Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.04
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 1
+                      anchor 0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation 0.05 0 0
+                      rotation 1 -1.5700895750559034e-16 -2.355134362583855e-16 1.5707999999999995
+                      children [
+                        DEF ROLLER_SHAPE Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Cylinder {
+                            height 0.01
+                            radius 0.006
+                          }
+                        }
+                      ]
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 0.901
+                      anchor 0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 0.0217
+                      rotation 0.9009683720604384 7.850447875279517e-17 0.43388476874253534 1.5707999999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(1)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor 0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 0.0391
+                      rotation 0.623511382304177 -2.551395559465844e-16 0.7818142721498084 1.570799999999999
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(2)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor 0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 0.0487
+                      rotation 0.2225070914140067 7.850447875279518e-17 0.9749310715483833 1.5707999999999989
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(3)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 -0.2225
+                      anchor -0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 0.0487
+                      rotation -0.22250709141400696 9.81305984409939e-17 0.9749310715483833 1.5708000000000006
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(4)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 -0.6235
+                      anchor -0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 0.0391
+                      rotation -0.6235113823041768 0 0.7818142721498085 1.5707999999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(5)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 -0.901
+                      anchor -0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 0.0217
+                      rotation -0.9009683720604381 3.9252239376397603e-17 0.43388476874253595 1.5707999999999984
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(6)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 -1
+                      anchor -0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation -0.05 0 0
+                      rotation -1 -7.850447875279518e-17 0 1.5708
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(7)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.9749 0 0.2225
+                      anchor 0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 -0.0487
+                      rotation 0.22250709141400696 1.1774588498438582e-16 -0.9749310715483832 1.5709840180319867
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(8)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor -0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 -0.0391
+                      rotation -0.6235111486269518 -1.5699451331251452e-16 -0.7818144585116723 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(9)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor -0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 -0.0487
+                      rotation -0.22250709141400715 -4.4154706869144726e-17 -0.9749310715483832 1.570984018031986
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(10)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.7818 0 0.6235
+                      anchor 0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 -0.0391
+                      rotation 0.6235113823041769 3.139890266250291e-16 -0.7818142721498085 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(11)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 0.901
+                      anchor 0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 -0.0217
+                      rotation 0.9009683720604386 3.9248628328128624e-17 -0.4338847687425353 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(12)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 -0.901
+                      anchor -0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 -0.0217
+                      rotation -0.9009683720604384 1.1774588498438585e-16 -0.43388476874253556 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(13)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
+                name "omnidial_wheel"
+                boundingObject USE WHEEL_SHAPE
+                physics Physics {
+                }
+              }
+            ]
+          }
+        ]
+        name "omnidial_wheel(2)"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 1 0 -1
+        anchor -0.12 0 0.12
+      }
+      device [
+        RotationalMotor {
+          name "frontRightMotor"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.12 0 0.12
+        rotation -0.7071067811865476 0 -0.7071067811865476 1.5707999999999998
+        children [
+          DEF WHEEL_SHAPE Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.04
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.05 0 0
+            }
+            endPoint Solid {
+              translation 0.05 0 0
+              rotation 1 -7.789116017292319e-17 1.005838634020188e-16 1.5707999999999998
+              children [
+                DEF ROLLER_SHAPE Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.006
+                  }
+                }
+              ]
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 0.901
+              anchor 0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 0.0217
+              rotation 0.9009683720604388 1.2572982925252355e-17 0.4338847687425348 1.5707999999999989
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(1)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor 0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 0.0391
+              rotation 0.6235113823041769 -9.8130598440994e-17 0.7818142721498084 1.5707999999999989
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(2)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor 0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 0.0487
+              rotation 0.22250709141400674 -1.5700895809049439e-16 0.9749310715483833 1.5707999999999982
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(3)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 -0.2225
+              anchor -0.0111 0 0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 0.0487
+              rotation -0.22250709141400687 -1.1775671695938483e-16 0.9749310715483833 1.5708000000000004
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(4)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 -0.6235
+              anchor -0.0312 0 0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 0.0391
+              rotation -0.6235113823041772 -2.339615784668779e-24 0.7818142721498084 1.5707999999999995
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(5)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.4339 0 -0.901
+              anchor -0.045 0 0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 0.0217
+              rotation -0.9009683720604384 4.906530097520882e-17 0.43388476874253534 1.5708
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(6)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 -1
+              anchor -0.05 0 0
+            }
+            endPoint Solid {
+              translation -0.05 0 0
+              rotation -1 0 2.3551343859800127e-16 1.5707999999999998
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(7)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.9749 0 0.2225
+              anchor 0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation 0.0111 0 -0.0487
+              rotation 0.22250709141400657 -7.849725724110738e-17 -0.9749310715483832 1.5709840180319867
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(8)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.7818 0 0.6235
+              anchor -0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation -0.0312 0 -0.0391
+              rotation -0.6235111486269522 7.849725782595754e-17 -0.781814458511672 1.5709840180319858
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(9)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -0.9749 0 0.2225
+              anchor -0.0111 0 -0.0487
+            }
+            endPoint Solid {
+              translation -0.0111 0 -0.0487
+              rotation -0.22250709141400657 -2.924250686774301e-25 -0.9749310715483832 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(10)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.7818 0 0.6235
+              anchor 0.0312 0 -0.0391
+            }
+            endPoint Solid {
+              translation 0.0312 0 -0.0391
+              rotation 0.6235113823041771 -1.4718235623048233e-16 -0.781814272149808 1.5709840180319867
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(11)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 0.901
+              anchor 0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation 0.045 0 -0.0217
+              rotation 0.9009683720604386 -4.9060787164711216e-17 -0.43388476874253534 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(12)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.4339 0 -0.901
+              anchor -0.045 0 -0.0217
+            }
+            endPoint Solid {
+              translation -0.045 0 -0.0217
+              rotation -0.9009683720604384 -2.354917717233223e-16 -0.43388476874253556 1.570984018031986
+              children [
+                USE ROLLER_SHAPE
+              ]
+              name "solid(13)"
+              boundingObject USE ROLLER_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Transform {
+            translation 0 0.01 0
+            rotation 0 1 0 0.2244
+            children [
+              Solid {
+                children [
+                  DEF WHEEL_SHAPE Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.04
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 1
+                      anchor 0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation 0.05 0 0
+                      rotation 1 3.9252237036781814e-17 1.9626119454237216e-16 1.570799999999999
+                      children [
+                        DEF ROLLER_SHAPE Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Cylinder {
+                            height 0.01
+                            radius 0.006
+                          }
+                        }
+                      ]
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 0.901
+                      anchor 0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 0.0217
+                      rotation 0.9009683720604384 7.850448109241097e-17 0.4338847687425355 1.5707999999999998
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(1)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor 0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 0.0391
+                      rotation 0.6235113823041768 -1.1698078923343892e-24 0.7818142721498084 1.5708
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(2)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor 0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 0.0487
+                      rotation 0.22250709141400668 -1.1775671812919276e-16 0.9749310715483833 1.5708000000000004
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(3)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 -0.2225
+                      anchor -0.0111 0 0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 0.0487
+                      rotation -0.22250709141400696 -7.850447875279514e-17 0.9749310715483833 1.5708000000000004
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(4)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 -0.6235
+                      anchor -0.0312 0 0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 0.0391
+                      rotation -0.6235113823041769 -1.1698078923343894e-24 0.7818142721498084 1.5707999999999989
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(5)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.4339 0 -0.901
+                      anchor -0.045 0 0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 0.0217
+                      rotation -0.9009683720604386 3.925223879149365e-17 0.4338847687425354 1.5707999999999995
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(6)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0 0 -1
+                      anchor -0.05 0 0
+                    }
+                    endPoint Solid {
+                      translation -0.05 0 0
+                      rotation -1 7.8504481092411e-17 -7.06540315794004e-16 1.570799999999999
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(7)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.9749 0 0.2225
+                      anchor 0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation 0.0111 0 -0.0487
+                      rotation 0.22250709141400676 -7.849725694868234e-17 -0.9749310715483832 1.5709840180319858
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(8)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.7818 0 0.6235
+                      anchor -0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation -0.0312 0 -0.0391
+                      rotation -0.6235111486269517 1.5699451331251454e-16 -0.7818144585116723 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(9)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.9749 0 0.2225
+                      anchor -0.0111 0 -0.0487
+                    }
+                    endPoint Solid {
+                      translation -0.0111 0 -0.0487
+                      rotation -0.22250709141400735 3.924862832812863e-17 -0.9749310715483831 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(10)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.7818 0 0.6235
+                      anchor 0.0312 0 -0.0391
+                    }
+                    endPoint Solid {
+                      translation 0.0312 0 -0.0391
+                      rotation 0.623511382304177 1.1498621580506438e-19 -0.7818142721498081 1.5709840180319854
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(11)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 0.901
+                      anchor 0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation 0.045 0 -0.0217
+                      rotation 0.9009683720604382 -7.236555680979817e-17 -0.43388476874253556 1.5709840180319854
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(12)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.4339 0 -0.901
+                      anchor -0.045 0 -0.0217
+                    }
+                    endPoint Solid {
+                      translation -0.045 0 -0.0217
+                      rotation -0.9009683720604386 7.849725548655699e-17 -0.433884768742535 1.5709840180319863
+                      children [
+                        USE ROLLER_SHAPE
+                      ]
+                      name "solid(13)"
+                      boundingObject USE ROLLER_SHAPE
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
+                name "omnidial_wheel"
+                boundingObject USE WHEEL_SHAPE
+                physics Physics {
+                }
+              }
+            ]
+          }
+        ]
+        name "omnidial_wheel(3)"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+      }
+    }
+    Camera {
+      translation 0 0 0.105
+      rotation 0 1 0 3.14
+      children [
+        DEF CAMERA_SHAPE Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      fieldOfView 2
+      width 1280
+      height 1280
+      far 4
+      antiAliasing TRUE
+      focus Focus {
+        focalDistance 2
+        maxFocalDistance 4
+      }
+      zoom Zoom {
+        maxFieldOfView 2
+        minFieldOfView 0.3
+      }
+    }
+    VelodyneHDL-32E {
+      translation 0 0.14 0
+      name "lidar"
+    }
+    InertialUnit {
+      name "imu_ang_pos"
+    }
+    Accelerometer {
+      name "imu_lin_acc"
+    }
+    Gyro {
+      name "imu_ang_vel"
+    }
+  ]
+  name "WTRobotSimu-1"
+  boundingObject USE ROBOT_BOX_SHAPE
+  physics Physics {
+    density -1
+    mass 1
+    centerOfMass [
+      0 0 0
+    ]
+    inertiaMatrix [
+      0.012373333333333337 0.021333333333333336 0.012373333333333337
+      0 0 0
+    ]
+  }
+  controller "ros"
+}
