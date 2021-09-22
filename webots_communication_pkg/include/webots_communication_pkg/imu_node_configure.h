@@ -20,7 +20,7 @@ public:
 
 void IMUNodeConfig::set(const ros::NodeHandle &nh)
 {
-    nh.param("imu_node/sampling_time_period", sampling_time_period, 64);
+    nh.param("/imu_node/sampling_time_period", sampling_time_period, 64);
 }
 
 #endif //WEBOTS_WS_IMU_NODE_CONFIGURE_H

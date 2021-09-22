@@ -28,6 +28,6 @@ add_executable(imu_node src/imu_node.cpp include/webots_communication_pkg/imu_no
 target_link_libraries(imu_node ${catkin_LIBRARIES})
 add_dependencies(imu_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(lidar_node src/lidar_node.cpp src/lidar_node.cpp include/webots_communication_pkg/lidar_node.hpp)
+add_executable(lidar_node src/lidar_node.cpp src/lidar_node.cpp include/webots_communication_pkg/lidar_node.hpp include/webots_communication_pkg/lidar_node_configure.h)
 target_link_libraries(lidar_node ${catkin_LIBRARIES})
 add_dependencies(lidar_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

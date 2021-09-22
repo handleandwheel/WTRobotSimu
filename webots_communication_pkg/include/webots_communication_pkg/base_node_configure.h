@@ -9,7 +9,6 @@
 #define WEBOTS_WS_BASE_NODE_CONFIGURE_H
 
 #include "ros/ros.h"
-#include "cmath"
 
 using namespace std;
 
@@ -22,10 +21,10 @@ public:
     double frontRightMotorTorque;
     double backLeftMotorTorque;
     double backRightMotorTorque;
-    std::vector<double> frontLeftMotorPID = {10.0, 0.0, 0.0};
-    std::vector<double> frontRightMotorPID = {10.0, 0.0, 0.0};
-    std::vector<double> backLeftMotorPID = {10.0, 0.0, 0.0};
-    std::vector<double> backRightMotorPID = {10.0, 0.0, 0.0};
+    double frontLeftMotorPID[4];
+    double frontRightMotorPID[4];
+    double backLeftMotorPID[4];
+    double backRightMotorPID[4];
     double frontLeftMotorPos;
     double frontRightMotorPos;
     double backLeftMotorPos;
@@ -34,18 +33,26 @@ public:
 
 void BaseNodeConfig::set(const ros::NodeHandle &nh)
 {
-    nh.param("base_node/frontLeftMotor/torque", frontLeftMotorTorque, 3.0);
-    nh.param("base_node/frontRightMotor/torque", frontRightMotorTorque, 3.0);
-    nh.param("base_node/backLeftMotor/torque", backLeftMotorTorque, 3.0);
-    nh.param("base_node/backRightMotor/torque", backRightMotorTorque, 3.0);
-    nh.param("base_node/frontLeftMotor/pid", frontLeftMotorPID, frontLeftMotorPID);
-    nh.param("base_node/frontRightMotor/pid", frontRightMotorPID, frontRightMotorPID);
-    nh.param("base_node/backLeftMotor/pid", backLeftMotorPID, backLeftMotorPID);
-    nh.param("base_node/backRightMotor/pid", backRightMotorPID, backRightMotorPID);
-    nh.param("base_node/frontLeftMotor/pos", frontLeftMotorPos, (double)INFINITY);
-    nh.param("base_node/frontRightMotor/pos", frontRightMotorPos, (double)INFINITY);
-    nh.param("base_node/backLeftMotor/pos", backLeftMotorPos, (double)INFINITY);
-    nh.param("base_node/backRightMotor/pos", backRightMotorPos, (double)INFINITY);
+    nh.param("/base_node/frontLeftMotor/torque", frontLeftMotorTorque, 3.0);
+    nh.param("/base_node/frontRightMotor/torque", frontRightMotorTorque, 3.0);
+    nh.param("/base_node/backLeftMotor/torque", backLeftMotorTorque, 3.0);
+    nh.param("/base_node/backRightMotor/torque", backRightMotorTorque, 3.0);
+    nh.param("/base_node/frontLeftMotor/pid/KP", frontLeftMotorPID[0], 10.0);
+	nh.param("/base_node/frontLeftMotor/pid/KI", frontLeftMotorPID[1], 0.0);
+	nh.param("/base_node/frontLeftMotor/pid/KD", frontLeftMotorPID[2], 0.0);
+    nh.param("/base_node/frontRightMotor/pid/KP", frontRightMotorPID[0], 10.0);
+	nh.param("/base_node/frontRightMotor/pid/KI", frontRightMotorPID[1], 0.0);
+	nh.param("/base_node/frontRightMotor/pid/KD", frontRightMotorPID[2], 0.0);
+    nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[0], 10.0);
+	nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[1], 0.0);
+	nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[2], 0.0);
+    nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[0], 10.0);
+	nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[1], 0.0);
+	nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[2], 0.0);
+    nh.param("/base_node/frontLeftMotor/pos", frontLeftMotorPos, (double)INFINITY);
+    nh.param("/base_node/frontRightMotor/pos", frontRightMotorPos, (double)INFINITY);
+    nh.param("/base_node/backLeftMotor/pos", backLeftMotorPos, (double)INFINITY);
+    nh.param("/base_node/backRightMotor/pos", backRightMotorPos, (double)INFINITY);
 }
 
 #endif //WEBOTS_WS_BASE_NODE_CONFIGURE_H

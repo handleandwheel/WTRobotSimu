@@ -1,0 +1,210 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  basicTimeStep 16
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.6399262553667923 0.7314856098076906 0.2354213039138685 0.818217062907111
+  position 2.3083388396286106 0.8329579542175709 -0.42082092429590656
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 4 4
+  tileSize 1 1
+}
+Group {
+  children [
+    Solid {
+      translation 0.005 0.15 2.005
+      children [
+        DEF WALL_SHAPE Shape {
+          appearance DEF WALL_COLOR PBRAppearance {
+            baseColor 0.2 0.2 0.2
+            roughness 0.5
+            metalness 0
+          }
+          geometry Box {
+            size 4.01 0.3 0.01
+          }
+        }
+      ]
+      name "wall_1"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation 2.005 0.15 -0.005
+      rotation 0 1 0 1.5707
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_2"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation -2.005 0.15 0.005
+      rotation 0 1 0 1.5707
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_3"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation -0.005 0.15 -2.005
+      children [
+        USE WALL_SHAPE
+      ]
+      name "wall_4"
+      boundingObject USE WALL_SHAPE
+    }
+    Solid {
+      translation 1 0.15 -0.5
+      children [
+        DEF WALL5_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 3
+          }
+        }
+      ]
+      name "wall_5"
+      boundingObject USE WALL5_SHAPE
+    }
+    Solid {
+      translation -0.25 0.15 -0.5
+      children [
+        DEF WALL6_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 2.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_6"
+      boundingObject USE WALL6_SHAPE
+    }
+    Solid {
+      translation 0 0.15 1
+      children [
+        DEF WALL7_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 2
+          }
+        }
+      ]
+      name "wall_7"
+      boundingObject USE WALL7_SHAPE
+    }
+    Solid {
+      translation -1 0.15 -0.75
+      children [
+        DEF WALL8_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 1.5
+          }
+        }
+      ]
+      name "wall_8"
+      boundingObject USE WALL8_SHAPE
+    }
+    Solid {
+      translation -0.5 0.15 0.5
+      children [
+        DEF WALL9_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 1
+          }
+        }
+      ]
+      name "wall_9"
+      boundingObject USE WALL9_SHAPE
+    }
+    Solid {
+      translation 1 0.15 1
+      children [
+        DEF WALL10_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 1 0.3 0.01
+          }
+        }
+      ]
+      name "wall_10"
+      boundingObject USE WALL10_SHAPE
+    }
+    Solid {
+      translation 1.75 0.15 0
+      children [
+        DEF WALL11_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_11"
+      boundingObject USE WALL11_SHAPE
+    }
+    Solid {
+      translation -1.75 0.15 0.5
+      children [
+        DEF WALL12_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_12"
+      boundingObject USE WALL12_SHAPE
+    }
+    Solid {
+      translation -0.75 0.15 0
+      children [
+        DEF WALL13_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_13"
+      boundingObject USE WALL13_SHAPE
+    }
+    Solid {
+      translation -0.75 0.15 1
+      children [
+        DEF WALL14_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.5 0.3 0.01
+          }
+        }
+      ]
+      name "wall_14"
+      boundingObject USE WALL14_SHAPE
+    }
+    Solid {
+      translation -1 0.15 1.25
+      children [
+        DEF WALL15_SHAPE Shape {
+          appearance USE WALL_COLOR
+          geometry Box {
+            size 0.01 0.3 0.5
+          }
+        }
+      ]
+      name "wall_15"
+      boundingObject USE WALL15_SHAPE
+    }
+  ]
+}
+WTRobotSimu {
+  translation 1.7 0.055 -1.7
+}

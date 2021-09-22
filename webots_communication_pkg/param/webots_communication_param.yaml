@@ -1,0 +1,46 @@
+# params of base node
+base_node:
+    frontLeftMotor:
+        torque: 3.0
+        pid:
+            KP: 10.0
+            KI: 0.0
+            KD: 0.0
+    frontRightMotor:
+        torque: 3.0
+        pid:
+            KP: 10.0
+            KI: 0.0
+            KD: 0.0
+    backLeftMotor:
+        torque: 3.0
+        pid:
+            KP: 10.0
+            KI: 0.0
+            KD: 0.0
+    backRightMotor:
+        torque: 3.0
+        pid:
+            KP: 10.0
+            KI: 0.0
+            KD: 0.0
+
+# params of camera node
+camera_node:
+    exposure: 1.0
+    focalDistance: 2.0
+    fov: 2.0
+    resolution:
+        width: 10
+        height: 10
+    samplingPeriod: 64
+
+# param of imu node
+imu_node:
+    sampling_time_period: 64
+
+# params of lidar node
+lidar_node:
+    sampling_time_period: 64
+    frequency: 10.0
+
