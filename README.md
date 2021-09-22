@@ -1,8 +1,8 @@
 # WTRobotSimu
 
-[Introduction](##Introduction)
-[Installation](##Installation)
-[Webots](##Webots)
+[Introduction](##introduction)
+[Installation](##installation)
+[Webots](##webots)
 
 ## Introduction
 
