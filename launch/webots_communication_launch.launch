@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<launch>
+    <include file="$(find webots_ros)/launch/webots.launch">
+        <arg name="mode" value="realtime"/>
+        <arg name="no_gui" value="false"/>
+        <arg name="world" value="$(find webots_communication_pkg)/worlds/navi_world.wbt"/>
+    </include>
+    <node pkg="webots_communication_pkg" type="base_node" name="base_node" output="screen" />
+    <node pkg="webots_communication_pkg" type="camera_node" name="camera_node" output="screen" />
+    <node pkg="webots_communication_pkg" type="imu_node" name="imu_node" output="screen" />
+    <node pkg="webots_communication_pkg" type="lidar_node" name="lidar_node" output="screen" />
+    <rosparam command="load" file="$(find webots_communication_pkg)/param/webots_communication_param.yaml"/>
+</launch>
