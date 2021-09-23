@@ -129,7 +129,7 @@ BaseNode::BaseNode(ros::NodeHandle &nh)
     torque_srv.request.value = baseNodeConfig.backRightMotorTorque;
     backRightMotorTorqueClient.call(torque_srv);
 
-    ros::Subscriber vel_sub = nh.subscribe<geometry_msgs::Twist>("cmd_vel", 1, &BaseNode::vel_callback, this);
+    ros::Subscriber vel_sub = nh.subscribe<geometry_msgs::Twist>("/WTRobotSimu/cmd_vel", 1, &BaseNode::vel_callback, this);
 
     ros::spin();
 
