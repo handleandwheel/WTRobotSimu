@@ -77,7 +77,6 @@ BaseNode::BaseNode(ros::NodeHandle &nh)
 
     //set max pos
     webots_ros::set_float pos_srv;
-<<<<<<< HEAD
     pos_srv.request.value = std::numeric_limits<double>::infinity();
 	frontLeftMotorPosClient.call(pos_srv);
     pos_srv.request.value = std::numeric_limits<double>::infinity();
@@ -85,7 +84,6 @@ BaseNode::BaseNode(ros::NodeHandle &nh)
     pos_srv.request.value = std::numeric_limits<double>::infinity();
     backLeftMotorPosClient.call(pos_srv);
     pos_srv.request.value = std::numeric_limits<double>::infinity();
-=======
     pos_srv.request.value = INFINITY;//baseNodeConfig.frontLeftMotorPos;
     frontLeftMotorPosClient.call(pos_srv);
     pos_srv.request.value = INFINITY;//baseNodeConfig.frontRightMotorPos;
@@ -93,7 +91,6 @@ BaseNode::BaseNode(ros::NodeHandle &nh)
     pos_srv.request.value = INFINITY;//baseNodeConfig.backLeftMotorPos;
     backLeftMotorPosClient.call(pos_srv);
     pos_srv.request.value = INFINITY;//baseNodeConfig.backRightMotorPos;
->>>>>>> 34838648af0c4c5ff2b4e143a6f8a9251b08cee3
     backRightMotorPosClient.call(pos_srv);
     //DO NOT CHANGE THE ORDER OF THE POS AND VEL!
 
