@@ -44,6 +44,7 @@ void BaseNodeConfig::set(const ros::NodeHandle &nh)
 	nh.param("/base_node/frontRightMotor/pid/KI", frontRightMotorPID[1], 0.0);
 	nh.param("/base_node/frontRightMotor/pid/KD", frontRightMotorPID[2], 0.0);
     nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[0], 10.0);
+<<<<<<< HEAD
 	nh.param("/base_node/backLeftMotor/pid/KI", backLeftMotorPID[1], 0.0);
 	nh.param("/base_node/backLeftMotor/pid/KD", backLeftMotorPID[2], 0.0);
     nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[0], 10.0);
@@ -53,6 +54,17 @@ void BaseNodeConfig::set(const ros::NodeHandle &nh)
     //nh.param("/base_node/frontRightMotor/pos", frontRightMotorPos, (double)INFINITY);
     //nh.param("/base_node/backLeftMotor/pos", backLeftMotorPos, (double)INFINITY);
     //nh.param("/base_node/backRightMotor/pos", backRightMotorPos, (double)INFINITY);
+=======
+	nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[1], 0.0);
+	nh.param("/base_node/backLeftMotor/pid/KP", backLeftMotorPID[2], 0.0);
+    nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[0], 10.0);
+	nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[1], 0.0);
+	nh.param("/base_node/backRightMotor/pid/KP", backRightMotorPID[2], 0.0);
+    nh.param("/base_node/frontLeftMotor/pos", frontLeftMotorPos, (double)INFINITY);
+    nh.param("/base_node/frontRightMotor/pos", frontRightMotorPos, (double)INFINITY);
+    nh.param("/base_node/backLeftMotor/pos", backLeftMotorPos, (double)INFINITY);
+    nh.param("/base_node/backRightMotor/pos", backRightMotorPos, (double)INFINITY);
+>>>>>>> 34838648af0c4c5ff2b4e143a6f8a9251b08cee3
 }
 
 #endif //WEBOTS_WS_BASE_NODE_CONFIGURE_H
